@@ -1,0 +1,12 @@
+{
+  "version": 2,
+  "dgSpecHash": "Ze6YgixUbAS3ciZEp4mHT0kUvunVH+8kcPVDIHJlwMs4D/4zgzUNtBIL8VvJbO3ybdK4Og4w5fm3oeuardKABw==",
+  "success": true,
+  "projectFilePath": "C:\\Users\\Tavares\\source\\repos\\Trabalho_de_TDJ\\Trabalho_de_TDJ\\Trabalho_de_TDJ.csproj",
+  "expectedPackageFiles": [
+    "C:\\Users\\Tavares\\.nuget\\packages\\monogame.content.builder.task\\3.8.0.1641\\monogame.content.builder.task.3.8.0.1641.nupkg.sha512",
+    "C:\\Users\\Tavares\\.nuget\\packages\\monogame.framework.desktopgl\\3.8.0.1641\\monogame.framework.desktopgl.3.8.0.1641.nupkg.sha512",
+    "C:\\Users\\Tavares\\.nuget\\packages\\microsoft.netcore.app.host.win-x64\\3.1.23\\microsoft.netcore.app.host.win-x64.3.1.23.nupkg.sha512"
+  ],
+  "logs": []
+}
