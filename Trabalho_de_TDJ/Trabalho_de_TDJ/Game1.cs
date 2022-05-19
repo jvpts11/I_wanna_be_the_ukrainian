@@ -9,8 +9,12 @@ namespace Trabalho_de_TDJ
         private GraphicsDeviceManager _graphics;
         private SpriteBatch _spriteBatch;
         private Player player;
-        private Player bullet;
         private KeyboardManager km;
+
+        char[,] map;
+        const int tileSize = 32;
+        int width, height;
+        Texture2D dirtTex, grassTex;
         
 
         public Game1()
@@ -34,6 +38,9 @@ namespace Trabalho_de_TDJ
             _spriteBatch = new SpriteBatch(GraphicsDevice);
             player = new Player(km,_spriteBatch,Content,GraphicsDevice);
 
+            grassTex = Content.Load<Texture2D>("Grass_Block");
+            dirtTex = Content.Load<Texture2D>("Dirt_Block");
+
             // TODO: use this.Content to load your game content here
         }
 
@@ -44,7 +51,7 @@ namespace Trabalho_de_TDJ
 
             km.Update();
             player.Move();
-            player.Shoot();
+            
             // TODO: Add your update logic here
 
             base.Update(gameTime);

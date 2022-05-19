@@ -4,10 +4,14 @@
   <Platform>DesktopGL</Platform>
   <Config />
   <SourceFiles>
-    <File>C:/Users/Tavares/source/repos/Trabalho_de_TDJ/Trabalho_de_TDJ/Content/Bullet.png</File>
-    <File>C:/Users/Tavares/source/repos/Trabalho_de_TDJ/Trabalho_de_TDJ/Content/Vadim.png</File>
+    <File>C:/Users/Tavares/OneDrive/Documentos/GitHub/I_wanna_be_the_ukrainian/Trabalho_de_TDJ/Trabalho_de_TDJ/Content/Bullet.png</File>
+    <File>C:/Users/Tavares/OneDrive/Documentos/GitHub/I_wanna_be_the_ukrainian/Trabalho_de_TDJ/Trabalho_de_TDJ/Content/Dirt_Block.png</File>
+    <File>C:/Users/Tavares/OneDrive/Documentos/GitHub/I_wanna_be_the_ukrainian/Trabalho_de_TDJ/Trabalho_de_TDJ/Content/Grass_Block.png</File>
+    <File>C:/Users/Tavares/OneDrive/Documentos/GitHub/I_wanna_be_the_ukrainian/Trabalho_de_TDJ/Trabalho_de_TDJ/Content/Vadim.png</File>
   </SourceFiles>
   <DestFiles>
+    <File xsi:nil="true" />
+    <File xsi:nil="true" />
     <File xsi:nil="true" />
     <File xsi:nil="true" />
   </DestFiles>

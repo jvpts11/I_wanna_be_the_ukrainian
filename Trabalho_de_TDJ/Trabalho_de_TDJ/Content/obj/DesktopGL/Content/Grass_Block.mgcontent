@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="utf-8"?>
 <PipelineBuildEvent xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
-  <SourceFile>C:/Users/Tavares/OneDrive/Documentos/GitHub/I_wanna_be_the_ukrainian/Trabalho_de_TDJ/Trabalho_de_TDJ/Content/Bullet.png</SourceFile>
-  <SourceTime>2022-05-16T15:20:14.4796545+01:00</SourceTime>
-  <DestFile>C:/Users/Tavares/OneDrive/Documentos/GitHub/I_wanna_be_the_ukrainian/Trabalho_de_TDJ/Trabalho_de_TDJ/Content/bin/DesktopGL/Content/Bullet.xnb</DestFile>
-  <DestTime>2022-05-16T15:40:17.3271865+01:00</DestTime>
+  <SourceFile>C:/Users/Tavares/OneDrive/Documentos/GitHub/I_wanna_be_the_ukrainian/Trabalho_de_TDJ/Trabalho_de_TDJ/Content/Grass_Block.png</SourceFile>
+  <SourceTime>2022-05-19T09:25:23.5584003+01:00</SourceTime>
+  <DestFile>C:/Users/Tavares/OneDrive/Documentos/GitHub/I_wanna_be_the_ukrainian/Trabalho_de_TDJ/Trabalho_de_TDJ/Content/bin/DesktopGL/Content/Grass_Block.xnb</DestFile>
+  <DestTime>2022-05-19T09:29:00.5011644+01:00</DestTime>
   <Importer>TextureImporter</Importer>
   <ImporterTime>2020-08-10T17:17:54+01:00</ImporterTime>
   <Processor>TextureProcessor</Processor>
