@@ -15,6 +15,11 @@ namespace Trabalho_de_TDJ
         string[] LevelPath = {"Test_Level.txt" };
         int LevelNumber;
 
+        public LevelManager()
+        {
+            
+        }
+
         public void NextLevel()
         {
 
