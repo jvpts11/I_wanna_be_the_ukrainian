@@ -55,3 +55,14 @@ C:\Users\Tavares\OneDrive\Documentos\GitHub\I_wanna_be_the_ukrainian\Trabalho_de
 C:\Users\Tavares\OneDrive\Documentos\GitHub\I_wanna_be_the_ukrainian\Trabalho_de_TDJ\Trabalho_de_TDJ\obj\Debug\netcoreapp3.1\Trabalho_de_TDJ.pdb
 C:\Users\Tavares\OneDrive\Documentos\GitHub\I_wanna_be_the_ukrainian\Trabalho_de_TDJ\Trabalho_de_TDJ\obj\Debug\netcoreapp3.1\Trabalho_de_TDJ.genruntimeconfig.cache
 C:\Users\Tavares\OneDrive\Documentos\GitHub\I_wanna_be_the_ukrainian\Trabalho_de_TDJ\Trabalho_de_TDJ\bin\Debug\netcoreapp3.1\Content\Test_Background.xnb
+C:\Users\Tavares\OneDrive\Documentos\GitHub\I_wanna_be_the_ukrainian\Trabalho_de_TDJ\Trabalho_de_TDJ\bin\Debug\netcoreapp3.1\Content\Tile_background.xnb
+C:\Users\Tavares\OneDrive\Documentos\GitHub\I_wanna_be_the_ukrainian\Trabalho_de_TDJ\Trabalho_de_TDJ\bin\Debug\netcoreapp3.1\Content\testlevel.txt
+C:\Users\Tavares\OneDrive\Documentos\GitHub\I_wanna_be_the_ukrainian\Trabalho_de_TDJ\Trabalho_de_TDJ\bin\Debug\netcoreapp3.1\Content\rickastley.xnb
+C:\Users\Tavares\OneDrive\Documentos\GitHub\I_wanna_be_the_ukrainian\Trabalho_de_TDJ\Trabalho_de_TDJ\bin\Debug\netcoreapp3.1\Content\Rick_Astley_Never_Gonna_Give_You_Up.ogg
+C:\Users\Tavares\OneDrive\Documentos\GitHub\I_wanna_be_the_ukrainian\Trabalho_de_TDJ\Trabalho_de_TDJ\bin\Debug\netcoreapp3.1\Content\Rick_Astley_Never_Gonna_Give_You_Up.xnb
+C:\Users\Tavares\OneDrive\Documentos\GitHub\I_wanna_be_the_ukrainian\Trabalho_de_TDJ\Trabalho_de_TDJ\bin\Debug\netcoreapp3.1\Content\X2Download.com - Rick Astley - Never Gonna Give You Up (Official Music Video) (320 kbps).ogg
+C:\Users\Tavares\OneDrive\Documentos\GitHub\I_wanna_be_the_ukrainian\Trabalho_de_TDJ\Trabalho_de_TDJ\bin\Debug\netcoreapp3.1\Content\X2Download.com - Rick Astley - Never Gonna Give You Up (Official Music Video) (320 kbps).xnb
+C:\Users\Tavares\OneDrive\Documentos\GitHub\I_wanna_be_the_ukrainian\Trabalho_de_TDJ\Trabalho_de_TDJ\bin\Debug\netcoreapp3.1\Content\bulletSound.ogg
+C:\Users\Tavares\OneDrive\Documentos\GitHub\I_wanna_be_the_ukrainian\Trabalho_de_TDJ\Trabalho_de_TDJ\bin\Debug\netcoreapp3.1\Content\bulletSound.xnb
+C:\Users\Tavares\OneDrive\Documentos\GitHub\I_wanna_be_the_ukrainian\Trabalho_de_TDJ\Trabalho_de_TDJ\bin\Debug\netcoreapp3.1\Content\jumpSound.ogg
+C:\Users\Tavares\OneDrive\Documentos\GitHub\I_wanna_be_the_ukrainian\Trabalho_de_TDJ\Trabalho_de_TDJ\bin\Debug\netcoreapp3.1\Content\jumpSound.xnb

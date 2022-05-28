@@ -5,13 +5,14 @@ using Microsoft.Xna.Framework;
 using Microsoft.Xna.Framework.Content;
 using Microsoft.Xna.Framework.Graphics;
 using Microsoft.Xna.Framework.Input;
+using Microsoft.Xna.Framework.Audio;
 
 namespace Trabalho_de_TDJ
 {
     public class Player
     {
         Vector2 pos;
-        Vector2 initialJumpPos;
+        Vector2 playerdirection = new Vector2(1,0);
 
         KeyboardManager km;
 
@@ -20,14 +21,18 @@ namespace Trabalho_de_TDJ
 
         bool isGrounded = true;
         bool isJumping;
-        bool isFalling;
 
         float JumpTime = 0.3f;
         float timer;
 
         Texture2D playerTex;
 
+        Rickroll lol;
+        List<Bullet> balas;
+        List<SoundEffect> efeitos;
+
         int MovementVelocity = 4;
+        private ContentManager content;
 
         public Player(KeyboardManager km, SpriteBatch spriteBatch, ContentManager content, GraphicsDevice gd)
         {
@@ -35,12 +40,30 @@ namespace Trabalho_de_TDJ
             this.spriteBatch = spriteBatch;
             this.playerTex = content.Load<Texture2D>("Vadim");
             this.gd = gd;
-            pos = new Vector2(0, 50);
+            this.content = content;
+            balas = new List<Bullet>();
+            efeitos = new List<SoundEffect>();
+            efeitos.Add(content.Load<SoundEffect>("jumpSound"));
+            efeitos.Add(content.Load<SoundEffect>("bulletSound"));
+            SoundEffect.MasterVolume = 1.0f;
         }
 
         public void StartPos(Vector2 StartPosition)
         {
             this.pos = StartPosition;
+            int qualquercoisa = gd.Viewport.Height;
+            int qualquercoisa2 = gd.Viewport.Width;
+        }
+
+        public void Update(GameTime gm)
+        {
+            Move(gm);
+            Jump();
+            Shoot();
+            foreach (Bullet b in balas)
+            {
+                b.Update();
+            }
         }
 
         public void Move(GameTime gt)
@@ -48,20 +71,27 @@ namespace Trabalho_de_TDJ
             if (km.isKeyHeld(Keys.Right))
             {
                 pos = pos + new Vector2(1, 0) * MovementVelocity;
+                playerdirection = new Vector2(1,0);
             }
             if (km.isKeyHeld(Keys.Left))
             {
                 pos = pos + new Vector2(-1, 0) * MovementVelocity;
+                playerdirection = new Vector2(-1,0);
             }
-            if (km.isKeyHeld(Keys.X))
+            if (km.isKeyHeld(Keys.R))
             {
-
+                lol = new Rickroll(content, spriteBatch);
+                lol.playRickroll();
             }
             if(timer >= JumpTime)
             {
                 isJumping = false;
-                isFalling = true;
                 timer = 0;
+            }
+            if(pos.Y <= 0)
+            {
+                pos.Y = 0;
+                isGrounded = true;
             }
             if (isJumping == true)
             {
@@ -69,11 +99,21 @@ namespace Trabalho_de_TDJ
             }
         }
 
-        public void Jump(KeyboardManager km)
+        public void Shoot()
+        {
+            if (km.IsKeyPressed(Keys.Space))
+            {
+                efeitos[1].CreateInstance().Play();
+                Bullet bullet = new Bullet(km, spriteBatch, content, gd,playerdirection, pos);
+                balas.Add(bullet);
+            }
+        }
+
+        public void Jump()
         {
             if (km.IsKeyPressed(Keys.Z))
             {
-                initialJumpPos = pos;
+                efeitos[0].CreateInstance().Play();
                 isGrounded = false;
                 isJumping = true;
                 
@@ -81,10 +121,6 @@ namespace Trabalho_de_TDJ
             if (isJumping == true)
             {
                 pos = pos + new Vector2(0, 5);
-                
-            }
-            if(isFalling == true&&pos == initialJumpPos)
-            {
                 
             }
             if (isGrounded == false&&isJumping ==false)
@@ -96,13 +132,16 @@ namespace Trabalho_de_TDJ
 
         public void Draw()
         {
-            spriteBatch.Draw(playerTex, ConvertToDraw(pos), Color.White);
-        }
-
-        public Vector2 ConvertToDraw(Vector2 pos)
-        {
-
-            return new Vector2(gd.Viewport.Width / 2 + pos.X, gd.Viewport.Height - pos.Y);
+            spriteBatch.Draw(playerTex, Conversions.ConvertToDraw(pos,gd), Color.White);
+            Vector2 coisa = Conversions.ConvertToDraw(pos,gd);
+            foreach (Bullet b in balas)
+            {
+                b.Draw();
+            }
+            if(lol != null)
+            {
+                lol.DrawRickRoll();
+            }
         }
     }
 }

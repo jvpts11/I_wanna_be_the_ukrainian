@@ -18,28 +18,30 @@ namespace Trabalho_de_TDJ
 
         Texture2D bultex;
 
-        int bulvel = 4;
+        Vector2 direction;
 
-        public Bullet(KeyboardManager km, SpriteBatch spriteBatch, ContentManager content, GraphicsDevice gd)
+
+        int bulvel = 6;
+
+        public Bullet(KeyboardManager km, SpriteBatch spriteBatch, ContentManager content, GraphicsDevice gd, Vector2 direction, Vector2 playerpos)
         {
             this.km = km;
             this.spritebatch = spriteBatch;
             bultex = content.Load<Texture2D>("Bullet");
             this.gd = gd;
-
+            this.direction = direction;
+            bulPos = playerpos;
         }
 
-        public void Shoot()
+        public void Update()
         {
-            if (km.IsKeyPressed(Keys.Space))
-            {
-                bulPos = bulPos + new Vector2(1,0)* bulvel;
-            }
+            bulPos = bulPos + direction* bulvel;
         }
 
         public void Draw()
         {
-
+            
+            spritebatch.Draw(bultex,Conversions.ConvertToDraw(bulPos,gd),Color.White);
         }
     }
 }

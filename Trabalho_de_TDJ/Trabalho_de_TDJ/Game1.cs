@@ -1,21 +1,27 @@
 ﻿using Microsoft.Xna.Framework;
 using Microsoft.Xna.Framework.Graphics;
 using Microsoft.Xna.Framework.Input;
+using Microsoft.Xna.Framework.Audio;
+using Microsoft.Xna.Framework.Content;
+
+using System;
+using System.Collections.Generic;
+using System.Text;
 
 namespace Trabalho_de_TDJ
 {
     public class Game1 : Game
     {
         private GraphicsDeviceManager _graphics;
+        
         private SpriteBatch _spriteBatch;
         private Player player;
         private LevelManager LevelManager;
         private KeyboardManager km;
-
-        char[,] map;
+        
         const int tileSize = 32;
-        int width, height;
-        Texture2D dirtTex, grassTex, background;
+        Texture2D dirtTex, grassTex, tileBackground;
+        Vector2 playerpos;
         
 
         public Game1()
@@ -30,7 +36,7 @@ namespace Trabalho_de_TDJ
         protected override void Initialize()
         {
             // TODO: Add your initialization logic here
-
+            LevelManager = new LevelManager(GraphicsDevice, tileSize, Content);
             base.Initialize();
         }
 
@@ -38,10 +44,13 @@ namespace Trabalho_de_TDJ
         {
             _spriteBatch = new SpriteBatch(GraphicsDevice);
             player = new Player(km,_spriteBatch,Content,GraphicsDevice);
-            background = Content.Load<Texture2D>("Test_Background");
 
+            tileBackground = Content.Load<Texture2D>("Tile_background");
             grassTex = Content.Load<Texture2D>("Grass_Block");
             dirtTex = Content.Load<Texture2D>("Dirt_Block");
+
+            LevelManager.LoadLevel(_graphics,ref playerpos);
+            player.StartPos(playerpos);
 
             // TODO: use this.Content to load your game content here
         }
@@ -52,8 +61,7 @@ namespace Trabalho_de_TDJ
                 Exit();
 
             km.Update();
-            player.Move(gameTime);
-            player.Jump(km);
+            player.Update(gameTime);
             
             
             // TODO: Add your update logic here
@@ -64,11 +72,10 @@ namespace Trabalho_de_TDJ
         protected override void Draw(GameTime gameTime)
         {
             _spriteBatch.Begin();
-            GraphicsDevice.Clear(Color.CornflowerBlue);
+            GraphicsDevice.Clear(Color.DarkBlue);
+
+            LevelManager.Draw(_spriteBatch);
             player.Draw();
-
-            //_spriteBatch.Draw(background,new Vector2(0,0),Color.White);
-
             // TODO: Add your drawing code here
 
             base.Draw(gameTime);

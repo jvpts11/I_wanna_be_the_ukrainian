@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8"?>
+<PipelineBuildEvent xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <SourceFile>C:/Users/Tavares/OneDrive/Documentos/GitHub/I_wanna_be_the_ukrainian/Trabalho_de_TDJ/Trabalho_de_TDJ/Content/Rick_Astley_Never_Gonna_Give_You_Up.mp3</SourceFile>
+  <SourceTime>2022-05-27T11:37:43.8722225+01:00</SourceTime>
+  <DestFile>C:/Users/Tavares/OneDrive/Documentos/GitHub/I_wanna_be_the_ukrainian/Trabalho_de_TDJ/Trabalho_de_TDJ/Content/bin/DesktopGL/Rick_Astley_Never_Gonna_Give_You_Up.xnb</DestFile>
+  <DestTime>2022-05-28T13:05:59.1897009+01:00</DestTime>
+  <Importer>Mp3Importer</Importer>
+  <ImporterTime>2020-08-10T17:17:54+01:00</ImporterTime>
+  <Processor>SongProcessor</Processor>
+  <ProcessorTime>2020-08-10T17:17:54+01:00</ProcessorTime>
+  <Parameters>
+    <Key>Quality</Key>
+    <Value>Best</Value>
+  </Parameters>
+  <Dependencies />
+  <BuildAsset />
+  <BuildOutput>
+    <string>C:/Users/Tavares/OneDrive/Documentos/GitHub/I_wanna_be_the_ukrainian/Trabalho_de_TDJ/Trabalho_de_TDJ/Content/bin/DesktopGL/Rick_Astley_Never_Gonna_Give_You_Up.ogg</string>
+  </BuildOutput>
+</PipelineBuildEvent>
