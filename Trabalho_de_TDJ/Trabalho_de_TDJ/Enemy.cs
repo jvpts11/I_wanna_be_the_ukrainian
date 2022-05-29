@@ -24,8 +24,10 @@ namespace Trabalho_de_TDJ
         List<Bullet> balas;
 
         bool isShootFromEnemy;
+        bool hasShooted;
 
-        float shootTimer;
+        float Timer;
+        float shootTime = 1.2f;
 
         public Enemy(SpriteBatch spritebatch, ContentManager content,SoundEffect som, GraphicsDevice gd)
         {
@@ -42,14 +44,38 @@ namespace Trabalho_de_TDJ
             enemyPos = StartPosition;
         }
 
-        public void Update(GameTime gm)
+        public void Update(GameTime gt)
         {
+            ShootTiming(gt);
+            foreach (Bullet b in balas)
+            {
+                b.Update();
+            }
+        }
+        public void ShootTiming(GameTime gt)
+        {
+            if(Timer == 0 && hasShooted == false)
+            {
+                hasShooted = true;
+                Shoot();
+            }
+            if (hasShooted == true)
+            {
+                Timer += (float)gt.ElapsedGameTime.TotalSeconds;
+            }
+            if (Timer >= shootTime)
+            {
+                hasShooted = false;
+                Timer = 0;
+            }
 
         }
 
         public void Shoot()
         {
-
+            som.CreateInstance().Play();
+            Bullet bala = new Bullet(sp,content,gd,enemyDir,enemyPos);
+            balas.Add(bala);
         }
 
         public void Draw()

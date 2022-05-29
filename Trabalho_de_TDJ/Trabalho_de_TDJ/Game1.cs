@@ -24,8 +24,9 @@ namespace Trabalho_de_TDJ
         Texture2D dirtTex, grassTex, tileBackground;
         Vector2 playerpos;
         Vector2 enemypos;
-        List<SoundEffect> efeitos = new List<SoundEffect>();
+        List<SoundEffect> efeitos = new List<SoundEffect>(); // Tutorial de som extraído de: https://gamefromscratch.com/monogame-tutorial-audio/
 
+        //Authors: João Tavares, 21871 && Antônio Saraiva 23491
 
         public Game1()
         {

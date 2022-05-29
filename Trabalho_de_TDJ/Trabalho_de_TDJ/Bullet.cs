@@ -33,6 +33,15 @@ namespace Trabalho_de_TDJ
             bulPos = playerpos;
         }
 
+        public Bullet(SpriteBatch spriteBatch, ContentManager content, GraphicsDevice gd, Vector2 direction, Vector2 enemypos)
+        {
+            spritebatch = spriteBatch;
+            bultex = content.Load<Texture2D>("Bullet");
+            this.gd = gd;
+            this.direction = direction;
+            bulPos = enemypos;
+        }
+
         public void Update()
         {
             bulPos = bulPos + direction* bulvel;

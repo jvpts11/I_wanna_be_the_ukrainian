@@ -129,7 +129,6 @@ namespace Trabalho_de_TDJ
         public void Draw()
         {
             spriteBatch.Draw(playerTex, Conversions.ConvertToDraw(pos,gd), Color.White);
-            Vector2 coisa = Conversions.ConvertToDraw(pos,gd);
             foreach (Bullet b in balas)
             {
                 b.Draw();
