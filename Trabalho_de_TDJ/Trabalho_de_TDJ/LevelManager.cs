@@ -19,7 +19,6 @@ namespace Trabalho_de_TDJ
         ContentManager content;
         Texture2D grassTex;
         Texture2D dirtTex;
-        Texture2D tileBackground;
 
         int height, width;
 
@@ -29,16 +28,15 @@ namespace Trabalho_de_TDJ
         {
             this.gd = gd;
             this.tileSize = tileSize;
-            tileBackground = Content.Load<Texture2D>("Tile_background");
 
             grassTex = Content.Load<Texture2D>("Grass_Block");
             dirtTex = Content.Load<Texture2D>("Dirt_Block");
         }
 
-        public void NextLevel(int height, int width, GraphicsDeviceManager gdm ,char[,] map, ref Vector2 playerPos)
+        public void NextLevel(int height, int width, GraphicsDeviceManager gdm ,char[,] map, ref Vector2 playerPos, ref Vector2 enemyPos)
         {
             LevelNumber++;
-            LoadLevel(gdm, ref playerPos);
+            LoadLevel(gdm, ref playerPos, ref enemyPos);
         }
 
         public Vector2 ConvertToWorld(Vector2 pos)
@@ -49,11 +47,19 @@ namespace Trabalho_de_TDJ
             return pos;
         }
 
-        public void LoadLevel(GraphicsDeviceManager graphics, ref Vector2 playerPos)
+        public Vector2 EnemyConvertToWorld(Vector2 pos)
+        {
+            pos.X = -gd.Viewport.Width / 2 + pos.X;
+            pos.Y = gd.Viewport.Height / 2 - pos.Y + 32;
+            return pos;
+        }
+
+        public void LoadLevel(GraphicsDeviceManager graphics, ref Vector2 playerPos, ref Vector2 enemypos)
         {
             if (LevelNumber >= LevelPath.Length) return;
 
             Vector2 windowplayer = Vector2.Zero;
+            Vector2 windowenemy = Vector2.Zero;
 
             string[] lines = File.ReadAllLines("Content/" + LevelPath[LevelNumber]);
             map = new char[lines[0].Length, lines.Length];
@@ -65,7 +71,14 @@ namespace Trabalho_de_TDJ
                     map[x, y] = currentLine[x];
 
                     if (currentLine[x] == 'i')
+                    {
                         windowplayer = new Vector2(x*tileSize,y*tileSize);
+                    }
+                        
+                    if(currentLine[x] == 'E')
+                    {
+                        windowenemy = new Vector2(x * tileSize, y * tileSize);
+                    }
 
                 }
 
@@ -77,6 +90,7 @@ namespace Trabalho_de_TDJ
             graphics.ApplyChanges();
 
             playerPos = ConvertToWorld(windowplayer);
+            enemypos = EnemyConvertToWorld(windowenemy);
         }
 
         public void Draw(SpriteBatch _spriteBatch)

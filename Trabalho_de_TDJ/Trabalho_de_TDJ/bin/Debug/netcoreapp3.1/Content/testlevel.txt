@@ -4,7 +4,7 @@
                                    
                                    
            GGG                     
-i          DDD          GGG        
-GGGGGGGGGGGDDDGGGGGGGGGGDDDGGGGGGGG
+i          DDD    E     GGG    E   
+GGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGG
 DDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDD
 DDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDD

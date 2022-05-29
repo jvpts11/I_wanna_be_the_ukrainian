@@ -29,12 +29,12 @@ namespace Trabalho_de_TDJ
 
         Rickroll lol;
         List<Bullet> balas;
-        List<SoundEffect> efeitos;
+        SoundEffect pulo, bala;
 
         int MovementVelocity = 4;
         private ContentManager content;
 
-        public Player(KeyboardManager km, SpriteBatch spriteBatch, ContentManager content, GraphicsDevice gd)
+        public Player(KeyboardManager km, SpriteBatch spriteBatch, ContentManager content, GraphicsDevice gd,SoundEffect som,SoundEffect bala)
         {
             this.km = km;
             this.spriteBatch = spriteBatch;
@@ -42,17 +42,13 @@ namespace Trabalho_de_TDJ
             this.gd = gd;
             this.content = content;
             balas = new List<Bullet>();
-            efeitos = new List<SoundEffect>();
-            efeitos.Add(content.Load<SoundEffect>("jumpSound"));
-            efeitos.Add(content.Load<SoundEffect>("bulletSound"));
-            SoundEffect.MasterVolume = 1.0f;
+            pulo = som;
+            this.bala = bala;
         }
 
         public void StartPos(Vector2 StartPosition)
         {
             this.pos = StartPosition;
-            int qualquercoisa = gd.Viewport.Height;
-            int qualquercoisa2 = gd.Viewport.Width;
         }
 
         public void Update(GameTime gm)
@@ -103,7 +99,7 @@ namespace Trabalho_de_TDJ
         {
             if (km.IsKeyPressed(Keys.Space))
             {
-                efeitos[1].CreateInstance().Play();
+                bala.CreateInstance().Play();
                 Bullet bullet = new Bullet(km, spriteBatch, content, gd,playerdirection, pos);
                 balas.Add(bullet);
             }
@@ -113,7 +109,7 @@ namespace Trabalho_de_TDJ
         {
             if (km.IsKeyPressed(Keys.Z))
             {
-                efeitos[0].CreateInstance().Play();
+                pulo.CreateInstance().Play();
                 isGrounded = false;
                 isJumping = true;
                 

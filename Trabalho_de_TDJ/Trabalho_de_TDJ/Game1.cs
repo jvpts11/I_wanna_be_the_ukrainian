@@ -16,13 +16,16 @@ namespace Trabalho_de_TDJ
         
         private SpriteBatch _spriteBatch;
         private Player player;
+        private Enemy enemy;
         private LevelManager LevelManager;
         private KeyboardManager km;
         
         const int tileSize = 32;
         Texture2D dirtTex, grassTex, tileBackground;
         Vector2 playerpos;
-        
+        Vector2 enemypos;
+        List<SoundEffect> efeitos = new List<SoundEffect>();
+
 
         public Game1()
         {
@@ -30,7 +33,7 @@ namespace Trabalho_de_TDJ
             Content.RootDirectory = "Content";
             IsMouseVisible = true;
             km = new KeyboardManager();
-
+            SoundEffect.MasterVolume = 1.0f;
         }
 
         protected override void Initialize()
@@ -43,14 +46,21 @@ namespace Trabalho_de_TDJ
         protected override void LoadContent()
         {
             _spriteBatch = new SpriteBatch(GraphicsDevice);
-            player = new Player(km,_spriteBatch,Content,GraphicsDevice);
+            
 
             tileBackground = Content.Load<Texture2D>("Tile_background");
             grassTex = Content.Load<Texture2D>("Grass_Block");
             dirtTex = Content.Load<Texture2D>("Dirt_Block");
 
-            LevelManager.LoadLevel(_graphics,ref playerpos);
+            efeitos.Add(Content.Load<SoundEffect>("jumpSound"));
+            efeitos.Add(Content.Load<SoundEffect>("bulletSound"));
+            efeitos.Add(Content.Load<SoundEffect>("DoomShotgunSound"));
+
+            player = new Player(km,_spriteBatch,Content,GraphicsDevice, efeitos[0],efeitos[1]);
+            enemy = new Enemy(_spriteBatch,Content,efeitos[2],GraphicsDevice);
+            LevelManager.LoadLevel(_graphics,ref playerpos,ref enemypos);
             player.StartPos(playerpos);
+            enemy.StartPosition(enemypos);
 
             // TODO: use this.Content to load your game content here
         }
@@ -62,6 +72,7 @@ namespace Trabalho_de_TDJ
 
             km.Update();
             player.Update(gameTime);
+            enemy.Update(gameTime);
             
             
             // TODO: Add your update logic here
@@ -76,6 +87,7 @@ namespace Trabalho_de_TDJ
 
             LevelManager.Draw(_spriteBatch);
             player.Draw();
+            enemy.Draw();
             // TODO: Add your drawing code here
 
             base.Draw(gameTime);

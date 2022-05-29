@@ -66,3 +66,5 @@ C:\Users\Tavares\OneDrive\Documentos\GitHub\I_wanna_be_the_ukrainian\Trabalho_de
 C:\Users\Tavares\OneDrive\Documentos\GitHub\I_wanna_be_the_ukrainian\Trabalho_de_TDJ\Trabalho_de_TDJ\bin\Debug\netcoreapp3.1\Content\bulletSound.xnb
 C:\Users\Tavares\OneDrive\Documentos\GitHub\I_wanna_be_the_ukrainian\Trabalho_de_TDJ\Trabalho_de_TDJ\bin\Debug\netcoreapp3.1\Content\jumpSound.ogg
 C:\Users\Tavares\OneDrive\Documentos\GitHub\I_wanna_be_the_ukrainian\Trabalho_de_TDJ\Trabalho_de_TDJ\bin\Debug\netcoreapp3.1\Content\jumpSound.xnb
+C:\Users\Tavares\OneDrive\Documentos\GitHub\I_wanna_be_the_ukrainian\Trabalho_de_TDJ\Trabalho_de_TDJ\bin\Debug\netcoreapp3.1\Content\RussianSolder.xnb
+C:\Users\Tavares\OneDrive\Documentos\GitHub\I_wanna_be_the_ukrainian\Trabalho_de_TDJ\Trabalho_de_TDJ\bin\Debug\netcoreapp3.1\Content\DoomShotgunSound.xnb
